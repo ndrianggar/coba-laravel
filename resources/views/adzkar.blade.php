@@ -8,7 +8,7 @@
         @foreach ($posts as $post)
         <article class="mb-5">    
         <h1>
-            <a href="/detailadzkar/{{ $post["slug"] }}">{{ $post["title"] }}        
+            <a href="/detailadzkar/{{ $post['slug'] }}">{{ $post["title"] }}        
             </a>
         </h1>
         <h5>by: {{$post["author"] }}</h5>
