@@ -25,20 +25,22 @@ class Post
 public static function all(){
 // return -> jika akses variable biasa
 // gunakan return self::$static file 
-return self::$blog_adzkar;
+return collect(self::$blog_adzkar);
 }
 
 public static function find($slug){
 
     //buat tampungan dari data dengan variable
-    $posts = self::$blog_adzkar; // diambil menggunakan self:: karena tipe variable private
+    $posts = static::all(); // diambil menggunakan self:: karena tipe variable private
 
-    $new_post = [];
-    foreach($posts as $p ){
-        if($p["slug"] === $slug){
-            $new_post = $p;
-        }
-    }
-    return $new_post;
+    // $new_post = [];
+    // foreach($posts as $p ){
+    //     if($p["slug"] === $slug){
+    //         $new_post = $p;
+    //     }
+    // }
+    // return $new_post;
+
+    return $posts->first();
  }
 }
