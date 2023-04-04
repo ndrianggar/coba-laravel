@@ -41,9 +41,8 @@ Route::get('/adzkar', function (){
 // Halaman adzkar single
 // {slug} = wild card untuk dapatkan parameter dan menjadi uri dalam url
 
-Route::get('detailadzkar/{slug}', function($slug){
     return view('detailadzkar', [
             "title" => "Detail Adzkar",
-            "posts" => Post::find($slug)
+            "posts" => POST::find($slug),
     ]);
 });
